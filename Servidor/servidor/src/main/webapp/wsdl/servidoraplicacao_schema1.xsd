@@ -1,0 +1,71 @@
+<xs:schema xmlns:tns="http://servidor/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://servidor/" version="1.0">
+
+  <xs:element name="dividir" type="tns:dividir"/>
+
+  <xs:element name="dividirResponse" type="tns:dividirResponse"/>
+
+  <xs:element name="multiplicar" type="tns:multiplicar"/>
+
+  <xs:element name="multiplicarResponse" type="tns:multiplicarResponse"/>
+
+  <xs:element name="somar" type="tns:somar"/>
+
+  <xs:element name="somarResponse" type="tns:somarResponse"/>
+
+  <xs:element name="subtrai" type="tns:subtrai"/>
+
+  <xs:element name="subtraiResponse" type="tns:subtraiResponse"/>
+
+  <xs:complexType name="somar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:float"/>
+      <xs:element name="arg1" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="somarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dividir">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:float"/>
+      <xs:element name="arg1" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dividirResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subtrai">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:float"/>
+      <xs:element name="arg1" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subtraiResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="multiplicar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:float"/>
+      <xs:element name="arg1" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="multiplicarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

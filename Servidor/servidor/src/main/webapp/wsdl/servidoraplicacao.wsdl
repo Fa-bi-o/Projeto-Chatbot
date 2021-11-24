@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="servidorAplicacaoService" targetNamespace="http://servidor/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://servidor/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://servidor/" schemaLocation="servidoraplicacao_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="somar">
+    <wsdl:part name="parameters" element="tns:somar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dividir">
+    <wsdl:part name="parameters" element="tns:dividir">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dividirResponse">
+    <wsdl:part name="parameters" element="tns:dividirResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtrai">
+    <wsdl:part name="parameters" element="tns:subtrai">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicar">
+    <wsdl:part name="parameters" element="tns:multiplicar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicarResponse">
+    <wsdl:part name="parameters" element="tns:multiplicarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtraiResponse">
+    <wsdl:part name="parameters" element="tns:subtraiResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="somarResponse">
+    <wsdl:part name="parameters" element="tns:somarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="servidorAplicacao">
+    <wsdl:operation name="somar">
+      <wsdl:input name="somar" message="tns:somar">
+    </wsdl:input>
+      <wsdl:output name="somarResponse" message="tns:somarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dividir">
+      <wsdl:input name="dividir" message="tns:dividir">
+    </wsdl:input>
+      <wsdl:output name="dividirResponse" message="tns:dividirResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtrai">
+      <wsdl:input name="subtrai" message="tns:subtrai">
+    </wsdl:input>
+      <wsdl:output name="subtraiResponse" message="tns:subtraiResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplicar">
+      <wsdl:input name="multiplicar" message="tns:multiplicar">
+    </wsdl:input>
+      <wsdl:output name="multiplicarResponse" message="tns:multiplicarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="servidorAplicacaoServiceSoapBinding" type="tns:servidorAplicacao">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="somar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="somar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="somarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dividir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="dividir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dividirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtrai">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="subtrai">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subtraiResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplicar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="multiplicar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="multiplicarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servidorAplicacaoService">
+    <wsdl:port name="servidorAplicacaoPort" binding="tns:servidorAplicacaoServiceSoapBinding">
+      <soap:address location="http://localhost:8080/servidor/services/servidorAplicacaoPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
