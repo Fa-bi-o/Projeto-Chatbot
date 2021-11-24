@@ -3,11 +3,6 @@ import requests
 import json
 import os
 
-# FALTA:
-# SUBTRAIR OS PEDIDOS ENQUANTO ESTÃO SENDO FEITOS DA QUANTIDADE TOTAL EM ESTOQUE
-# DEVOLVER CASO AO PEDIDO SEJA CANCELADO
-
-
 # CRIAÇÃO DO CLIENTE E ACESSANDO O LINK DO SERVIDOR
 client = Client('http://localhost:9090/servidorAplicacaoPort?wsdl')
 
