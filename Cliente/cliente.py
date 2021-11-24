@@ -26,7 +26,7 @@ class ChatBot:
     # INICIALIZAÇÃO, COM O TOKEN DO BOT, CRIADO PREVIAMENTE COM O BOTFATHER + URL DO TELEGRAM E A FASE INICIAL
     def __init__(self):
 
-        token = '2122431700:AAFUAnL4ZOILIMIu_xcVrriE4Cw6laU9Zms'
+        token = '' # TOKEN REMOVIDO POR AVISO DO GUITHUB
         self.url = f'https://api.telegram.org/bot{token}/'
         self.fase = 1
         self.pedido = []
