@@ -108,14 +108,14 @@ class ChatBot:
                     return f'''{comida[mensagem][0]} adicionado(a) ao carrinho{os.linesep}{os.linesep}{comidas()}{os.linesep}4 - Fechar Pedido{os.linesep}5 - Voltar'''
 
                 else:
-                    return f'''Nosso estoque de {comida[mensagem][0]} acabou por hoje :c{os.linesep}{comidas()}{os.linesep}4 - Fechar Pedido{os.linesep}5 - Voltar'''
+                    return f'''Nosso estoque de {comida[mensagem][0]} acabou por hoje :c{os.linesep}{os.linesep}{comidas()}{os.linesep}4 - Fechar Pedido{os.linesep}5 - Voltar'''
 
             elif mensagem == '4':
 
                 self.fase = 5
                 total = client.service.calcularPreco(self.pedido)
 
-                return f'''Seu pedido deu um total de : R$ {total}, confirme para fechamendo do pedido (s/n)'''
+                return f'''Seu pedido deu um total de : R$ {total}. Confirme para fechamendo do pedido (s/n)'''
 
             elif mensagem == '5':
 
@@ -130,7 +130,7 @@ class ChatBot:
 
             if mensagem == '1' or mensagem == '2':
 
-                estoque = client.service.verificarEstoque(comida[mensagem][0])
+                estoque = client.service.verificarEstoque(bebida[mensagem][0])
 
                 if estoque > 0:
 
@@ -139,14 +139,14 @@ class ChatBot:
                     return f'''{bebida[mensagem][0]} adicionado(a) ao carrinho{os.linesep}{os.linesep}{bebidas()}{os.linesep}3 - Fechar Pedido{os.linesep}4 - Voltar'''
 
                 else:
-                    return f'''Nosso estoque de {bebida[mensagem][0]} acabou por hoje :c{os.linesep}{bebidas()}{os.linesep}3 - Fechar Pedido{os.linesep}4 - Voltar'''
+                    return f'''Nosso estoque de {bebida[mensagem][0]} acabou por hoje :c{os.linesep}{os.linesep}{bebidas()}{os.linesep}3 - Fechar Pedido{os.linesep}4 - Voltar'''
 
             elif mensagem == '3':
 
                 self.fase = 5
                 total = client.service.calcularPreco(self.pedido)
 
-                return f'''Seu pedido deu um total de : R$ {total}, confirme para fechamendo do pedido (s/n)'''
+                return f'''Seu pedido deu um total de : R$ {total}. Confirme para fechamendo do pedido (s/n)'''
 
             elif mensagem == '4':
 
@@ -162,7 +162,8 @@ class ChatBot:
             if mensagem.lower() in ('s', 'sim'):
 
                 self.fase = 6
-
+                self.pedido.clear()
+                
                 return f'''Pedido Fechado!{os.linesep}Informe o endereço de entrega'''
 
             else:
@@ -181,7 +182,10 @@ class ChatBot:
         elif fase == 7:
 
             if mensagem.lower() in ('s', 'sim'):
-
+                
+                self.fase = 1
+                self.pedido.clear()
+                
                 return f'''Endereço confirmado. Em breve receberá seu pedido{os.linesep}Agradecemos a preferência'''
 
             else:
